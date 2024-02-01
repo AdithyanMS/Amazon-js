@@ -1,4 +1,4 @@
-productsHTML = ``;
+let productsHTML = ``;
 
 products.forEach((product) => {
   productsHTML+=`<div class="product-container">
@@ -74,6 +74,13 @@ buttons.forEach((button) => {
         qnty: 1
       })
     }
+    let cartQuantity =0;
+    cart.forEach((product) => {
+      cartQuantity+=product.qnty;
+    })
+
+    document.querySelector('.js-cart-quantity').innerHTML=cartQuantity;
+
     console.log(cart);
   })
 })
